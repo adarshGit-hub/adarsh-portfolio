@@ -88,6 +88,28 @@ const projects: Project[] = [
       security: "Role-based administrative gating, secure session cookies, and encrypted customer data storage.",
     },
   },
+  {
+    title: "Split Karo",
+    tagline: "Group Expense Splitting — Without the Awkward Silence",
+    description:
+      "Because friendships shouldn't end over who paid for the Goa trip. Split Karo is a real-time group expense splitting app built with Next.js and Supabase — track shared spends, auto-calculate individual dues, and settle up with a QR code before the resentment sets in.",
+    image: "/SplitKaro.jpg",
+    tags: ["Next.js 16", "TypeScript", "Supabase", "PostgreSQL", "Tailwind CSS", "QR Code"],
+    github: "https://github.com/adarshGit-hub/splitkaro",
+    live: "https://splitkaro.adarshraghuwanshi.com",
+    architectureDetails: {
+      systemDesign:
+        "Supabase-backed real-time architecture with Row Level Security policies ensuring each group's financial data stays precisely where it belongs. Next.js App Router handles SSR for fast cold loads while Supabase Realtime pushes live balance updates across all participants without a single manual refresh.",
+      keyFeatures: [
+        "Real-time balance sync across all group members — no refresh, no lag, no awkward 'did you see my update?' texts",
+        "QR code-powered expense sharing: create a split group and onboard friends without them needing an account",
+        "Granular expense categorization with automatic per-person due calculation and running settlement ledger",
+        "Supabase Row Level Security ensures strict data isolation — your group's spends are never visible to anyone outside it",
+      ],
+      databaseSchema: "PostgreSQL tables for Groups, Members, Expenses, ExpenseSplits, and Settlements — all enforced by Supabase RLS policies.",
+      security: "Supabase Auth with Row Level Security policies, server-side session management via @supabase/ssr, and zero-trust data access per group boundary.",
+    },
+  },
 ]
 
 // 3D Perspective Tilt Card Sub-Component
